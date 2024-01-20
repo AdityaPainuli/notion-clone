@@ -6,6 +6,7 @@ import { SignIn, SignInButton, UserButton } from "@clerk/clerk-react";
 import { useConvexAuth } from "convex/react";
 import { MoonIcon, SunIcon } from "lucide-react";
 import { useTheme } from "next-themes";
+import Link from "next/link";
 
 const Navbar = () => {
     const isScrolled = useScrollTop();
@@ -18,7 +19,11 @@ const Navbar = () => {
             <div className=" flex space-x-4 items-center">
                 {!isAuthenticated ? (
                     <SignInButton mode="modal">
-                        <Button variant={"ghost"} size={"sm"}>Login</Button>
+                        <Button variant={"ghost"} size={"sm"}>
+                            <Link href="/documents">
+                                Enter Notion
+                            </Link>
+                        </Button>
                     </SignInButton>
                 ) : (
                     <>

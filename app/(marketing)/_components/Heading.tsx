@@ -2,6 +2,7 @@
 import { Button } from '@/components/ui/button'
 import { useConvexAuth } from 'convex/react'
 import { ArrowRight } from 'lucide-react'
+import Link from 'next/link'
 import React from 'react'
 
 const Heading = () => {
@@ -12,7 +13,9 @@ const Heading = () => {
             <h3 className='text-base font-medium sm:text-xl md:text-2xl'>Notion is the connected workspace where
                 better, faster work happens.</h3>
 
-            {isAuthenticated ? (<Button>Enter Notion<ArrowRight className='h-4 w-4 ml-2' /></Button>) : (<Button>Try notion for free<ArrowRight className='h-4 w-4 ml-2' /></Button>)}
+            {isAuthenticated ? (<Button><Link href="/documents">
+                Enter Notion
+            </Link><ArrowRight className='h-4 w-4 ml-2' /></Button>) : (<Button>Try notion for free<ArrowRight className='h-4 w-4 ml-2' /></Button>)}
         </div>
     )
 }
